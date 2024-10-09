@@ -4,7 +4,7 @@ import re
 
 content = ""
 
-def graburl(string: url) -> None:
+def graburl(url: string) -> None:
 #   url = 'https://en.wikipedia.org/wiki/Whale'
 #   print ("\n### URLLIB.REQUEST")
 
@@ -18,14 +18,13 @@ def graburl(string: url) -> None:
 
 def parse_html() -> None:
     tag_pattern = r'<([a-zA-Z][a-zA-Z0-9]*)\b[^>]*>'
-    link_tags = ['a', 
 
     for line in content:
         if ('>' not in line):
             continue
         tags = re.findall(tag_pattern, line)
 
-        if (not set(tags) & link_tags);
+        if (not set(tags) & 'a');
             continue
 
 
@@ -36,6 +35,7 @@ def main():
 
     graburl(argv[1])
     print(content)
+    print("
 
 if __name__ == "__main__":
-    graburl();
+    main();
